@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}[2009/01/01]
+\ProvidesPackage{mcshw_title}[2012/01/01 v0.1 mcshw_title for Mathematics in Computer Science homework title]
+
+\RequirePackage{mcshw_fonts}
+
+\newcommand{\Letsmaketitle}[1] {
+	\title{
+		\textbf{\Huge{Homework {#1}}}\\
+		\vspace{5mm}
+		\Large{Mathematics in Computer Science}
+		\vspace{3mm}
+	}
+	\author{
+		\small{致远11级ACM班刘爽}
+		\and
+		\small{TA 施江虹}
+		\vspace{3mm}
+	}
+	\maketitle
+	\vspace{7mm}
+}
