@@ -1,0 +1,69 @@
+\documentclass[a4paper, 12pt]{mcshw}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\begin{document}
+	\Letsmaketitle{1}
+    \begin{enumerate}
+        \item Project the surface area of a sphere of radius $\sqrt{d}$ in d-dimensions onto a line through the center. For $d$ equal 2 and 3, derive an explicit formula for how the projected surface area changes as we move along the line. For large $d$, argue(intuitively)that the projected surface area should behave like a Gaussian.
+
+
+            \textbf{Solution:} For any $d$ greater than 1, the projected surface area of a d-dimensional along the line takes non-zero value for $x \in (-\sqrt{d},\sqrt{d})$, has has the formula 
+            $$
+            {(d - x^2)}^{\frac{d-2}{2}}A(d-1)
+            $$
+            for $d=2$, the fomula is
+            $$
+            x=2
+            $$
+            \begin{center}
+                \includegraphics[height=5cm]{1.png}
+            \end{center}
+            for $d=3$, the fomula is
+            $$
+            2\pi\sqrt{3 - x^2}
+            $$
+            \begin{center}
+                \includegraphics[height=5cm]{2.png}
+            \end{center}
+            and for large $d$, first we can observe that it is symmetric bout the origin. Then we calculate the first and second derivatives of the function
+            \begin{align}
+                \frac{dy}{dx}&=C_1(-x){(d-x^2)}^{\frac{d-4}{2}}\\
+                \frac{d^2y}{dx^2}&=C_2{(d-x^2)}^{\frac{d-6}{2}}\big((d-3)x^2-d\big)
+            \end{align}
+            it is strictly increasing when $x<0$, and strictly decreasing when $x>0$.In addition, it has inflection point at $x=\pm\sqrt{\frac{d}{d-3}}$, also it is concave down near origin and vice versa. Therefore it looks like a Gaussion for large d.
+            \begin{center}
+                \includegraphics[height=5cm]{3.png}
+
+                \vspace{-6mm}\small{$d=15$}
+            \end{center}
+
+
+        \item For what value of d is the volume, $V(d)$, of a d-dimensional unit sphere maximum? (Hint: Consider the ratio $\frac{V(d)}{V(d-1)}$).
+
+
+        \textbf{Solution:} First,
+        $$
+        \frac{V(d)}{V(d-2)}=\frac{(d-2)\sqrt{\pi}\Gamma(\frac{d-2}{2})}{d\Gamma(\frac{d}{2})},\text{for } d\geq1
+        $$ 
+        for $d=2k, k\geq2$,
+        $$
+        \frac{V(d)}{V(d-2)}=\frac{(k-1)\pi\Gamma(k-1)}{k\Gamma(k)}=\frac{\pi}{k}
+        $$
+        then 
+        $$
+        \argmax_kV(2k)=V(6)=\frac{\pi^3}{6}
+        $$
+        for $d=2k + 1, k\geq1$,
+        $$
+        \frac{V(d)}{V(d-2)}=\frac{(2k-1)\pi\Gamma(\frac{2k-1}{2})}{(2k+1)\Gamma(\frac{2k+1}{2})}=\frac{2\pi}{2k+1}
+        $$
+        then 
+        $$
+        \argmax_kV(2k+1)=V(5)=\frac{8\pi^2}{15}
+        $$
+        thus
+        $$
+        \argmax_dV(d)=\max(V(5), V(6))=V(5)
+        $$
+
+    \end{enumerate}
+\end{document}
