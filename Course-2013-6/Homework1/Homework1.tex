@@ -24,12 +24,14 @@
             \begin{center}
                 \includegraphics[height=5cm]{2.png}
             \end{center}
-            and for large $d$, first we can observe that it is symmetric bout the origin. Then we calculate the first and second derivatives of the function
-            \begin{align}
-                \frac{dy}{dx}&=C_1(-x){(d-x^2)}^{\frac{d-4}{2}}\\
-                \frac{d^2y}{dx^2}&=C_2{(d-x^2)}^{\frac{d-6}{2}}\big((d-3)x^2-d\big)
-            \end{align}
-            it is strictly increasing when $x<0$, and strictly decreasing when $x>0$.In addition, it has inflection point at $x=\pm\sqrt{\frac{d}{d-3}}$, also it is concave down near origin and vice versa. Therefore it looks like a Gaussion for large d.
+            and for large $d$, we observe that
+            \begin{align*}
+                {(d - x^2)}^{\frac{d-2}{2}}A(d-1)&=A(d-1)(d(1-\frac{x^2}{d}))^{\frac{d-2}{2}}\\
+                                                 &=A(d-1)d^{\frac{d-2}{2}}(1-\frac{x^2}{d})^{\frac{d-2}{2}}\\
+                                                 &\approx A(d-1)d^{\frac{d-2}{2}}e^{\frac{-x^2}{d}\frac{d-2}{2}}\\
+                                                 &\approx A(d-1)d^{\frac{d-2}{2}}e^{\frac{-x^2}{2}}
+            \end{align*}
+            and it looks like a Gaussian.
             \begin{center}
                 \includegraphics[height=5cm]{3.png}
 
