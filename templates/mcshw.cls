@@ -25,10 +25,8 @@
 	\vspace{2mm}
 	{\bfseries\slshape Solution:~}
 	\vspace{2mm}
-	\begin{list}{}{\setlength\listparindent{2em} \setlength\itemindent{2em}}
 	\item[]
 } {
-	\end{list}
 	\vspace{5mm}
 
 }

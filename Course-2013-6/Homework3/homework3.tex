@@ -37,5 +37,44 @@
         \end{enumerate}
     \item
     Generate 20 points uniformly at random on a 1,000-dimensional sphere of radius 100. Calculate the distance between each pair of points. Then project the data onto subspaces of dimension $k = \{100, 50, 10, 5, 4, 3, 2, 1\}$ and calculate the sum of squared error between $\frac{k}{d}$ times the original distances and the new pair wise distances for each of the above values of $k$.
+    \begin{solution}
+        Since what really matters is the relative error, so I calculate the sum of squared relative errors. A mathematica code is shown as below. 
+        \begin{center}
+            \includegraphics[height=4.5cm]{1.png}
+        \end{center}
+        When $k = 100$, the answer is 1692.46
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr1.eps}
+        \end{center}
+        When $k = 50$, the answer is 4339.74
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr2.eps}
+        \end{center}
+        When $k = 10$, the answer is 33018.2
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr3.eps}
+        \end{center}
+        When $k = 5$, the answer is 56942.4
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr4.eps}
+        \end{center}
+        When $k = 4$, the answer is 79749.0
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr5.eps}
+        \end{center}
+        When $k = 3$, the answer is 118775.0.
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr6.eps}
+        \end{center}
+        When $k = 2$, the answer is 191376.0.
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr7.eps}
+        \end{center}
+        When $k = 1$, the answer is 378386.0.
+        \begin{center}
+            \includegraphics[height=5cm]{1_gr8.eps}
+        \end{center}
+        As we can see, when the dimension which be projected to goes lower and lower, the relative error goes higher and higher, which is as we expected.
+    \end{solution}
 \end{enumerate}
 \end{document}
