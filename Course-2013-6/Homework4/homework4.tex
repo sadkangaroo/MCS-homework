@@ -14,10 +14,10 @@
                 &= \frac{d^6(n - 1)(n - 2)(n - 3)}{24n^5}
             \end{align*}
         \end{solution}
-    \item Search for WWW for an undirected graph or a data base that can be counted to a graph. find the connected components and count the number of each size.
+    \item Search for \textit{WWW} for an undirected graph or a data base that can be counted to a graph. find the connected components and count the number of each size.
         \pagebreak
         \begin{solution}
-            I find a dataset in \textbf{http://snap.stanford.edu/data/egonets-Facebook.html}, which provides `circles'(or `friends list')from Facebook.  This data was collected from survey participants using this Facebook app. For the convenience of computation, I simply remove the node with index zero, and finally get a graph which has 4038 nodes and 88233 edges.
+            I find a dataset in \textbf{http://snap.stanford.edu/data/egonets-Facebook.html}, which provides 'circles'(or 'friends list')from Facebook.  This data was collected from survey participants using this Facebook app. For the convenience of computation, I simply remove the node with index zero, and finally get a graph which has 4038 nodes and 88233 edges.
             Here is a piece of Mathematica code to deal with it.
             \begin{center}
                 \includegraphics[height=4cm]{1.png}
@@ -26,7 +26,7 @@
             \begin{center}
                 \includegraphics[height=7cm]{2.png}
             \end{center}
-            And the commponents' size distribution, in the form `\{size, count\}'
+            And the commponents' size distribution, in the form '\{size, count\}'
             \begin{center}
                 \includegraphics[height=1cm]{3.png}
             \end{center}
