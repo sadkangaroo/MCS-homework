@@ -36,10 +36,8 @@
 	\vspace{2mm}
 	{\bfseries\slshape Proof:~}
 	\vspace{2mm}
-	\begin{list}{}{\setlength\listparindent{2em} \setlength\itemindent{2em}}
 	\item[]
 } {
-	\end{list}
 	\begin{flushright}
 	$\square$
 	\end{flushright}
@@ -52,10 +50,8 @@
 	\vspace{2mm}
 	{\bfseries\slshape Construction:~}
 	\vspace{2mm}
-	\begin{list}{}{\setlength\listparindent{2em} \setlength\itemindent{2em}}
 	\item[]
 } {
-	\end{list}
 	\vspace{5mm}
 
 }
