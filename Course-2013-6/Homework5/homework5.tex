@@ -1,0 +1,42 @@
+\documentclass[a4paper, 12pt]{mcshw}
+\begin{document}
+\Letsmaketitle{5}
+\begin{enumerate}
+    \item Let $x_i$, $1 \geq i \geq n$, be a set of indicator variables with identical probability distributions. Let $x = \sum_{i = 1}^{n}x_i$ and suppose $E(x) \to \inf$. Show that if the $x_i$ are statistically independent then $Prob(x = 0) \to 0$.
+        \begin{proof}
+            We can use the Chabyshev inequality
+            $$Var(x) = \sum_{i = 1}^{n}Var(x_i) = C$$
+            \begin{align*}
+                P(x = 0) &\leq P\bigl(|x - E(x)| \geq E(x)\bigr)\\
+                &\leq \frac{Var(x)}{E^2(x)}\\
+                &= \frac{C}{E^2(x)}
+            \end{align*}
+            As $E(x) \to \inf$, $P(x = 0) \to 0$.
+
+        \end{proof}
+    \item Consider a model of random subset $N(n, p)$ of integers $\{1, 2, \dots, n\}$ where, $N(n, p)$ is the set obtained by independently at random including each of $\{1, 2, \dots, n\}$ into the set with probability $p$. Define what an ''increasing property'' of $N(n, p)$ means. Prove that every increasing peroperty of $N(n, p)$ has a threshold.
+        \begin{solution}
+            We define an increasing property of $N(n, p)$ as follows: 
+            \begin{quote}
+                $Q$ is an increasing property of $N$ if when a set $N$ has the property any set obtained by adding numbers to $N$ must also have the property.
+            \end{quote}
+            First we will proof the following lemma: 
+            \begin{quote}
+                If $Q$ is an increasing property and $0 \leq p \leq q \leq 1$, then the probability that $N(n, p)$ has property Q is less than or equal to the probability that $N(n, q)$ has property Q.
+            \end{quote}
+            Notice we could generate $N(n, q)$ in this way: First we generate $N(n, p)$, then we generate a set $N(n, \frac{q - p}{1 - p})$ and take the union of them to get $N(n, q)$. If $N(n, p)$ has the property $Q$, $N(n, q)$ must has it too. 
+
+            Next we will prove
+            \begin{quote}
+                Every increasing property of $N(n, p)$ has a threshold at $p(n)$, where for each $n$, $p(n)$ is the minimum real number $a$ for which the probability that $P(n, a)$ has the property $Q$ is $\frac{1}{2}$.
+            \end{quote}
+            Suppose $p_0(n)$ is any function such that
+            $$\lim_{n\to\inf}\frac{p_0(n)}{p(n)} = 0$$
+            We will show that almost surely $N(n, p_0)$ does not have property Q. Suppose this is false. Then, the probability that $N(n, p_0)$ has the property Q does not converge to zero. By the definition of limit, there must be a positive real number $\epsilon$ for which the probability that $N(n, p_0)$ has property Q is at least $\epsilon$ on an infinite set $I$ of $n$. 
+            
+            Let $m = \lceil (1/\epsilon) \rceil$. Lset $h$ be the m-fold replication of $N(n, p_0)$. Since from the m-fold method we have
+            $$Prob\bigl(N(n, mp)\text{ does not have Q}\bigr) \leq {\Bigl(Prob\bigl(N(n, p)\text{ does not have Q}\bigr)\Bigr)}^m$$
+            Then the probability that H does not have $Q$ is at most ${(1 - \epsilon)}^m \leq e^{-1} \leq 1/2$ for all $n \in I$. So for thse $n$, since $p(n)$ is the minimum real number $a$ for which the probability that $N(n, a)$ has property $Q$ is $1/2$, $mp_0 \geq p(n)$. This implies that $\frac{p_0(n)}{p(n)}$ is at leat $1/m$ infinitely often contradicting the hypothesis that $\lim\limits_{n\to\inf}\frac{p_0(n)}{p(n)} = 0$. A symmetric argument shows that for any $p_1(n)$ such that $\frac{p(n)}{p_1(n)}\to 0$, $N(n,p_1)$ almost surely has property Q.
+        \end{solution}
+\end{enumerate}
+\end{document}
