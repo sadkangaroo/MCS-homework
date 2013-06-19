@@ -4,14 +4,18 @@
 \begin{enumerate}
     \item Let $x_i$, $1 \geq i \geq n$, be a set of indicator variables with identical probability distributions. Let $x = \sum_{i = 1}^{n}x_i$ and suppose $E(x) \to \infty$. Show that if the $x_i$ are statistically independent then $Prob(x = 0) \to 0$.
         \begin{proof}
+            The only way $E(x)\to\infty$ is $n\to\infty$. 
+
             We can use the Chabyshev inequality
-            $$Var(x) = \sum_{i = 1}^{n}Var(x_i) = C$$
+            $$Var(x) = \sum_{i = 1}^{n}Var(x_i) = nC_1$$
+            $$E(x) = \sum_{i = 1}^{n}E(x_i) = nC_2$$
             \begin{align*}
                 P(x = 0) &\leq P\bigl(|x - E(x)| \geq E(x)\bigr)\\
                 &\leq \frac{Var(x)}{E^2(x)}\\
-                &= \frac{C}{E^2(x)}
+                &= \frac{nC_1}{n^2C_2^2}\\
+                &= \frac{C_1}{nC_2^2}
             \end{align*}
-            As $E(x) \to \infty$, $P(x = 0) \to 0$.
+            As $E(x) \to \infty$, which means $n\to\infty$, $P(x = 0) \to 0$.
 
         \end{proof}
     \item Consider a model of random subset $N(n, p)$ of integers $\{1, 2, \dots, n\}$ where, $N(n, p)$ is the set obtained by independently at random including each of $\{1, 2, \dots, n\}$ into the set with probability $p$. Define what an ''increasing property'' of $N(n, p)$ means. Prove that every increasing peroperty of $N(n, p)$ has a threshold.

@@ -21,7 +21,7 @@
                     First we notice that, due to the symmetrical properties, $E(X) = \frac{d}{2}$.
                 Then we need to calculate $Var(x)$. But the $d$ coordinates are not independent, so we should do a little bit transformation. Every time we generate a point. We can consider the generation in such a way. First we choose one dimension, let its coodinate to be $0$ or $1$, with equal probability. Then let the rest $d - 1$ coodinates take value uniformlly from $0$ to $1$. At last we change the dimension considered first to the first coodinate, this doesn't change the value of $X$. In this way, the $d$ coodinates are independent, and 
                 \begin{align*}
-                    Var(x) &= Var(x_1) + \sum\limits_{i = 2}^{d}x_i\\
+                    Var(X) &= Var(x_1) + \sum\limits_{i = 2}^{d}x_i\\
                     &= \frac{1}{4} + (d - 1)\int_{0}^{1}(x - \frac{1}{2})^2 dx\\
                     &= \frac{1}{4} + (d - 1)\frac{1}{12}\\
                     &= \frac{d}{12} + \frac{1}{6}
