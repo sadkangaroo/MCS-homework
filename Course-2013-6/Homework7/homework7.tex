@@ -1,0 +1,66 @@
+\documentclass[a4paper, 12pt]{mcshw}
+\begin{document}
+\Letsmaketitle{7}
+\begin{enumerate}
+    \item Suppose $A$ is an $n \times n$ matrix with block diagonal structure with $k$ equal size blocks where all entries of the $i^{th}$ block are $a_i$ with $a_1 > a_2 > \dots > a_k > 0$. Show that $A$ has exactl $k$ nonzero singular vectors $v_1,v_2,\dots,v_k$ where $v_i$ has the value $(\frac{k}{n})^{1/2}$ in the coordinates corresponding to the $i^{th}$ block and $0$ elsewhere. In other words, the singular vectors exactly indentify the blocks of the diagnal. What happens if $a_1 = a_2 = \dots = a_k$? In the case where the $a_i$ are equal, what is the structure of the set of all possible singular vectors?
+
+        Hint: By symmetry, the top singular vector's components must be constant in each block.
+        \begin{solution}
+            In fact, $v_i$ are the normalized eigenvectors of $A^TA$, which is an matrix with block diagnal structure the same as $A$ where all entries of the $i^{th}$ block are $\frac{n}{k}a_i^2$. And the $i^{th}$ block is a rank-1 matrix with all elements taking the same value, which has only one normalized $\frac{n}{k}$ dimension eigenvector $\left((\frac{k}{n})^{1/2}, (\frac{k}{n})^{1/2}, \dots, (\frac{k}{n})^{1/2}\right)$, then $A^TA$ has $k$ normalized eigenvectors $v_i$ where $v_i$ has the value $(\frac{k}{n})^{1/2}$ in the coordinates corresponding to the $i^{th}$ block and $0$ elsewhere.
+
+            Then we notice that the $k$ eigenvectors of $A^TA$ are linear independent. And on the other hand $A^TA$ is a rank-k matrix, it has at most k linear-independent eigenvectors. If all $a_i$ are different, then $A^TA$ has $k$ eigen-subspace. The $k$ normalized eigenvectors are the singularvectors we want. If all $a_i$ are the same, then $A^TA$ has a k-dimension eigen-subspace which is the span of $v_i$. Thus any orthonomal basis of this k-dimension subspace can be treat as the set of singular-vactors of $A$.
+        \end{solution}
+    \item Computer the singular value decomposition of the matrix
+        $$A = \left( 
+        \begin{array}{cc}
+            1 & 2\\
+            3 & 4
+        \end{array}
+        \right)
+        $$ 
+        \begin{solution}
+            $$A^TA = \left(
+            \begin{array}{cc}
+                10 & 14\\
+                14 & 20
+            \end{array}
+            \right)
+            $$
+            First we can solve the eigenvalues of $A^TA$
+            $$\lambda_1 = 29.866,\ \  \lambda_2 = 0.134$$
+            Then we can get the normalized eigenvectors
+            \begin{align*}
+            v_1 &= (0.576, 0.817)^T\\
+            v_2 &= (-0.817, 0.576)^T
+            \end{align*}
+            and $\delta_1 = \sqrt{\lambda_1} = 5.465$, $\delta_2 = \sqrt{\lambda_2} = 0.366$
+
+            Finally 
+            \begin{align*}
+                u_1 &= \frac{Av_1}{\delta_1} = (0.405, 0.915)^T\\
+                u_2 &= \frac{Av_2}{\delta_2} = (0.915, -0.405)^T
+            \end{align*}
+            We have
+            $$A = UDV^T = 
+            \left(
+            \begin{array}{cc}
+                0.405 & 0.915\\
+                0.915 & -0.405
+            \end{array}
+            \right)
+            \left(
+            \begin{array}{cc}
+                5.465 & 0\\
+                0 & 0.366
+            \end{array}
+            \right)
+            \left(
+            \begin{array}{cc}
+                0.576 & 0.817\\
+                -0.817 & 0.576
+            \end{array}
+            \right)
+            $$
+        \end{solution}
+\end{enumerate}
+\end{document}
