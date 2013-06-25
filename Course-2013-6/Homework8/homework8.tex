@@ -33,7 +33,7 @@
         \begin{solution}
             Let $X$ be a $20 \times 2$ matrix, Since we have
             $$(XX^T)_{ij} = -\frac{1}{2}[d_{ij}^2 - \frac{1}{n}\sum_{j = 1}^{n}d_{ij}^2 - \frac{1}{n}\sum_{i = 1}^nd_{ij}^2 + \frac{1}{n}\sum_{i = 1}^n\sum_{j = 1}^nd_{ij}^2]$$
-            We can easily get $XX^T$, using singular value decomposition, we can get $X$. The rows of $X$ are the coodinates of the cities.
+            We can easily get $XX^T$, using singular value decomposition, we can get $XX^T = UDV^T$. Notice that the columns of $U$ are the right singular vectors of $(XX^T)^T = XX^T$, which means $U^T = V^T$, thus $U = V$.  Then we get $$XX^T = VDV^T$$ $$X = \sqrt{D}V$$ where $\sqrt{D}$ means take the square root of each element in the diagonal of $D$. The rows of $X$ are the coodinates of the cities.
             
             See the map below.
             \pagebreak
