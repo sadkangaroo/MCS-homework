@@ -1,0 +1,23 @@
+\documentclass[a4paper, 12pt]{mcshw}
+\begin{document}
+\Letsmaketitle{10}
+\begin{enumerate}
+    \item Label the points in the plane that are within the circle of radius one as +1 and label the points in the annulus of inner radius two and outer radius three as -1. Find a function $\phi$ mapping the points to a higher dimensional space where the two sets are linearly separable.
+        \vspace{-4mm}
+        \begin{solution}
+            \vspace{-2mm}
+            Define a function
+            $$f: R^2 \rightarrow R^3$$
+            $$f(x, y) = (x, y, \sqrt{x ^ 2 + y ^ 2})$$
+            Then a plane $z = 1$ can separate these two kinds of points.
+        \end{solution}
+    \vspace{-3mm}
+    \item Prove that the VC-dimension of circles is three.
+    \vspace{2mm}
+        \begin{proof}
+            Let's consider three points forming a non-degenerate triangle. Obviously, any set of them can be shatter by a circle. 
+
+            On the other hand, for any four points. In one case, one point is inside the convex hull of the other three points, and we cannot label the  inside point +1 and the others -1. Otherwise, we call the four points a, b, c, d in the clockwise order. In this case, we cannot label a, b, c, d using one circle with +1, -1, +1, -1, and using another with -1, +1, -1, +1. If we can do this, we use two circles to divide the plane into four regions, which is not possible.
+        \end{proof}
+\end{enumerate}
+\end{document}
